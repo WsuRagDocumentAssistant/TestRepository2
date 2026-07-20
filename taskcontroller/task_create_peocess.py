@@ -7,7 +7,7 @@ class Task:
         self._params = params
 
     def __call__(self):
-        for work, param in self._works, self._params:
+        for work, param in zip(self._works, self._params):
             work(param)
 
 class CreateTaskProcess(Process):
@@ -19,4 +19,5 @@ class CreateTaskProcess(Process):
         print("Producer Start")
 
         task = Task([hello, world],["asdf",])
+        
         self.task_queue.put(task)

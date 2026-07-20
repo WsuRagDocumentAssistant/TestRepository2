@@ -7,3 +7,4 @@ TestRepository2.pyproj
 
 .vs/
 
+__pycache__/
