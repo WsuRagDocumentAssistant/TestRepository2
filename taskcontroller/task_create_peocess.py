@@ -1,5 +1,5 @@
 from multiprocessing import Process, Queue
-import funcs
+from .funcs import hello, world
 
 class Task:
     def __init__(self, works):
@@ -17,5 +17,5 @@ class CreateTaskProcess(Process):
     def run(self):
         print("Producer Start")
 
-        task = Task([funcs.hello, funcs.world])
+        task = Task([hello, world])
         self.task_queue.put(task)
